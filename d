@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# 用在线金山词霸和正则表达式写的一个命令行字典
+# ./d memory 则是查memory的读音和意思
 wget -q http://www.iciba.com/$1 
 cat $1 | col -b | sed 's/[ \t]*//g' > tmp
 sed -n 's/<strong>\[<\/strong><stronglang="EN-US"xml:lang="EN-US">\(.*\)<\/strong><strong>\]<\/strong>/\1/p' tmp
